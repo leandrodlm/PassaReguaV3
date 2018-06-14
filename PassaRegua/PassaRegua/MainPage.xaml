@@ -22,10 +22,12 @@
         </ListView>
 
         <Button Text="Adicionar pessoa" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand"  BackgroundColor="White" TextColor="DarkOliveGreen" Clicked="btnAdicionarPessoa_clicked"/>
+        HorizontalOptions="FillAndExpand"  BackgroundColor="White" TextColor="DarkOliveGreen" 
+                Clicked="BtnAdicionarPessoaPage_clicked"/>
 
         <Button Text="Adicionar produto" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"/>
+        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"
+                Clicked="BtnAdicionarProdutoPage_clicked"/>
 
         <Button Text="Fechar conta" VerticalOptions="End"
         HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"/>

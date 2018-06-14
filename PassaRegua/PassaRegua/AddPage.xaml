@@ -5,11 +5,13 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Nome:"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nome:" FontSize="Medium"
+                VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand" />
 
-            <Entry x:Name="nomePessoa" Text="" />
+            <Entry x:Name="nomePessoa" Text="" Placeholder="Informe o nome..."
+                   VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand"/>
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -23,11 +25,11 @@
                 <Button Text="Adicionar" VerticalOptions="End"
                         HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
                         TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="0"
-                        Clicked="btnAdicionar_clicked"/>
+                        Clicked="BtnAdicionar_clicked"/>
                 <Button Text="Cancelar" VerticalOptions="End"
                         HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
                         TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="1"
-                        Clicked="btnVoltar_clicked"/>
+                        Clicked="BtnVoltar_clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

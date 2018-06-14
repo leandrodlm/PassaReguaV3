@@ -12,18 +12,23 @@ namespace PassaRegua
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPage : ContentPage
     {
-        public AddPage()
+        MainPage mp;
+
+
+        public AddPage(MainPage m)
         {
+            mp = m;
             InitializeComponent();
         }
 
-
-        public void btnAdicionar_clicked(object sender, EventArgs e)
+        async void BtnAdicionar_clicked(object sender, EventArgs e)
         {
-            
+
+            mp.AddNovaPessoa(nomePessoa.Text);
+            await Navigation.PopModalAsync();
         }
 
-        async void btnVoltar_clicked(object sender, EventArgs e)
+        async void BtnVoltar_clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }

@@ -20,43 +20,27 @@ namespace PassaRegua
         {
 
             InitializeComponent();
-
-            /*
-            PessoasView = this.FindByName<ListView>("listapessoas");
-            pessoas = new List<String>() { "João" };
-            PessoasView.ItemsSource = pessoas;
-            */
-
             listapessoas.ItemsSource = pessoas;
-
-            // AddNovaPessoa();
-
         }
 
-        public class Pessoa
+        public void AddNovaPessoa(string entradaNome)
         {
-            public string nomePessoa { get; set; }
+            pessoas.Add(new Pessoa { nomePessoa = entradaNome });
         }
 
-        public void AddNovaPessoa()
+        async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
         {
-            pessoas.Add(new Pessoa { nomePessoa = "Rob Finnerty" });
-        }
-
-
-        async void btnAdicionarPessoa_clicked(object sender, EventArgs e)
-        {
-            var addPage = new AddPage();
-
+            var addPage = new AddPage(this);
+            addPage.BindingContext = pessoas;
             await Navigation.PushModalAsync(addPage);
         }
 
-        async void btnAdicionarProduto_clicked(object sender, EventArgs e)
+        async void BtnAdicionarProdutoPage_clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new AddProduto(), true);
         }
 
-        public void btnFecharConta_clicked(object sender, EventArgs e)
+        public void BtnFecharConta_clicked(object sender, EventArgs e)
         {
 
 
