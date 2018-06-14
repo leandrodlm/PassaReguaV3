@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PassaRegua"
+             x:Class="PassaRegua.MainPage"
+             BackgroundColor="Black">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Pessoas na mesa:" 
+           HorizontalOptions="Start"
+           VerticalOptions="CenterAndExpand" TextColor="White" FontSize="Medium"/>
+
+        <ListView x:Name="listapessoas" BackgroundColor="Black" VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding nomePessoa}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Adicionar pessoa" VerticalOptions="End"
+        HorizontalOptions="FillAndExpand"  BackgroundColor="White" TextColor="DarkOliveGreen" Clicked="btnAdicionarPessoa_clicked"/>
+
+        <Button Text="Adicionar produto" VerticalOptions="End"
+        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"/>
+
+        <Button Text="Fechar conta" VerticalOptions="End"
+        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"/>
+    </StackLayout>
+
+</ContentPage>
