@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PassaRegua"
              x:Class="PassaRegua.MainPage"
-             BackgroundColor="Black">
+             BackgroundColor="Black"
+             Title="Passa Regua">
 
     <StackLayout>
         <!-- Place new controls here -->

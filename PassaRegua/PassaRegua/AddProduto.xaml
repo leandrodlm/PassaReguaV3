@@ -4,12 +4,25 @@
              x:Class="PassaRegua.AddProduto">
     <ContentPage.Content>
         <StackLayout>
-            <Picker x:Name="pessoaPicker" HorizontalOptions="FillAndExpand" Title="Selecione a pessoa:">
-                <Picker.Items>
-                </Picker.Items>
-            </Picker>
+           
 
+            <ListView x:Name="listapessoass" BackgroundColor="Black" VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding nomePessoa}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Produto:" FontSize="Medium"
+                VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand" />
             <Entry x:Name="produto" Text="" />
+            <Label Text="Valor:" FontSize="Medium"
+                VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand" />
             <Entry x:Name="valor" Text="" />
 
             <Grid>
@@ -24,10 +37,11 @@
                 <Button Text="Adicionar" VerticalOptions="End"
                         HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
                         TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="0"
-                        Clicked="btnAdicionar_clicked"/>
+                        Clicked="BtnAdicionar_clicked"/>
                 <Button Text="Cancelar" VerticalOptions="End"
                         HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
-                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="1"/>
+                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="1"
+                        Clicked="BtnVoltar_clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

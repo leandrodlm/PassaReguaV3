@@ -14,11 +14,10 @@ namespace PassaRegua
         //List<String> pessoas;
         //List<String> produtos;
 
-        ObservableCollection<Pessoa> pessoas = new ObservableCollection<Pessoa>();
+        public ObservableCollection<Pessoa> pessoas = new ObservableCollection<Pessoa>();
 
         public MainPage()
         {
-
             InitializeComponent();
             listapessoas.ItemsSource = pessoas;
         }
@@ -30,19 +29,20 @@ namespace PassaRegua
 
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
         {
-            var addPage = new AddPage(this);
-            addPage.BindingContext = pessoas;
-            await Navigation.PushModalAsync(addPage);
+            //var addPage = new AddPage(this);
+            //addPage.BindingContext = pessoas;
+            await Navigation.PushModalAsync(new AddPage(this));
         }
 
         async void BtnAdicionarProdutoPage_clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AddProduto(), true);
+            //var addProduto = new AddProduto(this);
+            //addProduto.BindingContext = pessoas;
+            await Navigation.PushModalAsync(new AddProduto(this));
         }
 
         public void BtnFecharConta_clicked(object sender, EventArgs e)
         {
-
 
         }
     }

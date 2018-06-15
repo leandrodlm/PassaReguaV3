@@ -12,15 +12,31 @@ namespace PassaRegua
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddProduto : ContentPage
     {
-        public AddProduto()
+        MainPage mp;
+
+        public AddProduto(MainPage m)
         {
+            mp = m;
+
+            // var opcoesSelecaoPessoa = mp.pessoas;
+
+            listapessoass.ItemsSource = mp.pessoas;
+
             InitializeComponent();
         }
 
 
-        public void btnAdicionar_clicked(object sender, EventArgs e)
+        async void BtnAdicionar_clicked(object sender, EventArgs e)
         {
 
+            // mp.AddNovaPessoa(nomePessoa.Text);
+
+            await Navigation.PopModalAsync();
+        }
+
+        async void BtnVoltar_clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }
