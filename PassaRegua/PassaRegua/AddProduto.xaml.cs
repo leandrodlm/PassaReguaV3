@@ -14,39 +14,37 @@ namespace PassaRegua
     public partial class AddProduto : ContentPage
     {
         MainPage mp;
+        List<Pessoa> list = new List<Pessoa>();
 
         public AddProduto(MainPage m)
         {
-            mp = m;
-
-            // List<Pessoa> list = new List<Pessoa>(mp.pessoas);
-
-            //listaPessoasPicker.ItemsSource = list;
-
-            // Picker pick = AddProduto.
-
-            // listaPessoasPicker.ItemsSource = new ObservableCollection<Pessoa>(list as List<Pessoa>);
-
-
-
-            listaPessoasPicker.ItemsSource = new List<Pessoa>(mp.pessoas);
-
-            // var opcoesSelecaoPessoa = mp.pessoas;
-            // listapessoass.ItemsSource = mp.pessoas;
-            // ObservableCollection<Pessoa> novaLista = mp.pessoas;
-            //listaPessoasPicker.Items.Add("Olá!");
-
+            
             InitializeComponent();
+
+            mp = m;
+            foreach (Pessoa p in mp.pessoas)
+            {
+                list.Add(p);
+            }
+
+            listaPessoasPicker.ItemsSource = list;
+
         }
 
 
 
         async void BtnAdicionar_clicked(object sender, EventArgs e)
         {
-
-            // mp.AddNovaPessoa(nomePessoa.Text);
-
-            await Navigation.PopModalAsync();
+            try
+            {
+                Double v = Double.Parse(valor.Text);
+                mp.AddProduto(listaPessoasPicker.Items[listaPessoasPicker.SelectedIndex], v);
+                await Navigation.PopModalAsync();
+            }
+            catch(Exception ex)
+            {
+                DisplayAlert("Alerta", ex.Message, "OK");
+            }
         }
 
         async void BtnVoltar_clicked(object sender, EventArgs e)

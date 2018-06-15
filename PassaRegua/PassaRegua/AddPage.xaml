@@ -5,7 +5,7 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Adicionar pessoa" 
+            <Label Text="Adicionar Pessoa" 
            HorizontalOptions="FillAndExpand"
            HorizontalTextAlignment="Center" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
                FontFamily="Roboto"/>
