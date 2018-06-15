@@ -7,5 +7,6 @@ namespace PassaRegua
     public class Pessoa
     {
         public string nomePessoa { get; set; }
+        public Double valorTotal { get; set; }
     }
 }

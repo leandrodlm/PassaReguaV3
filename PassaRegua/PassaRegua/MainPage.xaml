@@ -3,35 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PassaRegua"
              x:Class="PassaRegua.MainPage"
-             BackgroundColor="Black"
-             Title="Passa Regua">
+             BackgroundColor="#FFF"
+             Title="Passa Regua"
+             >
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Pessoas na mesa:" 
-           HorizontalOptions="Start"
-           VerticalOptions="CenterAndExpand" TextColor="White" FontSize="Medium"/>
-
-        <ListView x:Name="listapessoas" BackgroundColor="Black" VerticalOptions="FillAndExpand"
+        
+        <ListView x:Name="listapessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand" >
 
-            <ListView.ItemTemplate>
+            <ListView.ItemTemplate >
                 <DataTemplate>
-                    <TextCell Text="{Binding nomePessoa}" />
+                    <ViewCell>
+                        <StackLayout BackgroundColor="White"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding nomePessoa}"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="Start"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large"
+                                FontFamily="Roboto"/>
+                                <Label Text="{Binding valorTotal, StringFormat='R{0:C2}'}"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="End"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large" 
+                                FontFamily="Roboto"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <Button Text="Adicionar pessoa" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand"  BackgroundColor="White" TextColor="DarkOliveGreen" 
-                Clicked="BtnAdicionarPessoaPage_clicked"/>
+        HorizontalOptions="FillAndExpand"  BackgroundColor="Teal" TextColor="White" 
+                Clicked="BtnAdicionarPessoaPage_clicked" FontFamily="Roboto"/>
 
         <Button Text="Adicionar produto" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"
-                Clicked="BtnAdicionarProdutoPage_clicked"/>
+        HorizontalOptions="FillAndExpand" BackgroundColor="Teal" TextColor="White"
+                Clicked="BtnAdicionarProdutoPage_clicked" FontFamily="Roboto"/>
 
         <Button Text="Fechar conta" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="DarkOliveGreen"/>
+        HorizontalOptions="FillAndExpand" BackgroundColor="Teal" TextColor="White" FontFamily="Roboto"/>
     </StackLayout>
 
 </ContentPage>

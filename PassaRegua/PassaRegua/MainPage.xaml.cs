@@ -24,7 +24,12 @@ namespace PassaRegua
 
         public void AddNovaPessoa(string entradaNome)
         {
-            pessoas.Add(new Pessoa { nomePessoa = entradaNome });
+            pessoas.Add(new Pessoa { nomePessoa = entradaNome, valorTotal = 0 });
+        }
+
+        public void AddProduto(Pessoa p, double valor)
+        {
+
         }
 
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
