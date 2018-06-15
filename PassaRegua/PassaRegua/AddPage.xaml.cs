@@ -14,7 +14,6 @@ namespace PassaRegua
     {
         MainPage mp;
 
-
         public AddPage(MainPage m)
         {
             mp = m;
