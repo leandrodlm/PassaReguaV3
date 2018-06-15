@@ -13,6 +13,7 @@ namespace PassaRegua
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddProduto : ContentPage
     {
+        // Git
         MainPage mp;
 
         public AddProduto(MainPage m)
@@ -29,7 +30,9 @@ namespace PassaRegua
 
 
 
-            listaPessoasPicker.ItemsSource = new List<Pessoa>(mp.pessoas);
+            // listaPessoasPicker.ItemsSource = new List<Pessoa>(mp.pessoas);
+
+            listaPessoasPicker.Items.Add("Olá!");
 
             // var opcoesSelecaoPessoa = mp.pessoas;
             // listapessoass.ItemsSource = mp.pessoas;
