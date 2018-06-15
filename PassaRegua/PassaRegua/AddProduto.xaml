@@ -6,10 +6,9 @@
         <StackLayout>
 
 
-            <Picker x:Name="listaPessoasPicker" >
-                
-                
-            </Picker>
+            <Picker x:Name="listaPessoasPicker" 
+                    VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand" />
 
             <Label Text="Produto:" FontSize="Medium"
                 VerticalOptions="Start"

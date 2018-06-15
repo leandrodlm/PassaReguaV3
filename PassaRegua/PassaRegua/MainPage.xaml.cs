@@ -19,7 +19,7 @@ namespace PassaRegua
         public MainPage()
         {
             InitializeComponent();
-            listapessoas.ItemsSource = pessoas;
+            listaPessoas.ItemsSource = pessoas;
         }
 
         public void AddNovaPessoa(string entradaNome)

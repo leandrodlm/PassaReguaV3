@@ -10,7 +10,7 @@
     <StackLayout>
         <!-- Place new controls here -->
         
-        <ListView x:Name="listapessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
+        <ListView x:Name="listaPessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand" >
 
             <ListView.ItemTemplate >
