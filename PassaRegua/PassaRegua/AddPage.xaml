@@ -5,7 +5,12 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Nome:" FontSize="Medium"
+            <Label Text="Adicionar pessoa" 
+           HorizontalOptions="FillAndExpand"
+           HorizontalTextAlignment="Center" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
+               FontFamily="Roboto"/>
+            
+            <Label Text="" FontSize="Medium"
                 VerticalOptions="Start"
                    HorizontalOptions="FillAndExpand" />
 
@@ -23,12 +28,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Text="Adicionar" VerticalOptions="End"
-                        HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
-                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
+                        TextColor="White" Grid.Row="0" Grid.Column="0"
                         Clicked="BtnAdicionar_clicked"/>
                 <Button Text="Cancelar" VerticalOptions="End"
-                        HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
-                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
+                        TextColor="White" Grid.Row="0" Grid.Column="1"
                         Clicked="BtnVoltar_clicked"/>
             </Grid>
         </StackLayout>

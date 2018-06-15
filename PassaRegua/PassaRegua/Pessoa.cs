@@ -9,4 +9,5 @@ namespace PassaRegua
         public string nomePessoa { get; set; }
         public Double valorTotal { get; set; }
     }
+        
 }
