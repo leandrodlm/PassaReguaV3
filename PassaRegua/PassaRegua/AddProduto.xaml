@@ -4,17 +4,12 @@
              x:Class="PassaRegua.AddProduto">
     <ContentPage.Content>
         <StackLayout>
-           
 
-            <ListView x:Name="listapessoass" BackgroundColor="Black" VerticalOptions="FillAndExpand"
-                            HorizontalOptions="FillAndExpand" >
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding nomePessoa}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Picker x:Name="listaPessoasPicker" >
+                
+                
+            </Picker>
 
             <Label Text="Produto:" FontSize="Medium"
                 VerticalOptions="Start"

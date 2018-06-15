@@ -18,9 +18,15 @@ namespace PassaRegua
         {
             mp = m;
 
+            var listaDePessoas = mp.pessoas;
+
             // var opcoesSelecaoPessoa = mp.pessoas;
 
-            listapessoass.ItemsSource = mp.pessoas;
+            // listapessoass.ItemsSource = mp.pessoas;
+
+            // ObservableCollection<Pessoa> novaLista = mp.pessoas;
+
+            //listaPessoasPicker.Items.Add("Olá!");
 
             InitializeComponent();
         }
