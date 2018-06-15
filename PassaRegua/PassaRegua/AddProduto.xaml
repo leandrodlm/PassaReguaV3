@@ -5,19 +5,28 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Label Text="Adicionar Produto" 
+           HorizontalOptions="FillAndExpand"
+           HorizontalTextAlignment="Center" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
+               FontFamily="Roboto"/>
 
-            <Picker x:Name="listaPessoasPicker" 
+            <Label Text="" FontSize="Medium"
+                VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand" />
+            <Picker x:Name="listaPessoasPicker" Title="Selecione uma pessoa..."
+                    ItemDisplayBinding="{Binding nomePessoa}"
                     VerticalOptions="Start"
                    HorizontalOptions="FillAndExpand" />
 
-            <Label Text="Produto:" FontSize="Medium"
+            <Label Text="" FontSize="Medium"
                 VerticalOptions="Start"
                    HorizontalOptions="FillAndExpand" />
-            <Entry x:Name="produto" Text="" />
-            <Label Text="Valor:" FontSize="Medium"
+            <Entry x:Name="produto" Text="" Placeholder="Informe o nome do produto..." />
+            
+            <Label Text="" FontSize="Medium"
                 VerticalOptions="Start"
                    HorizontalOptions="FillAndExpand" />
-            <Entry x:Name="valor" Text="" />
+            <Entry x:Name="valor" Text="" Placeholder="Informe o valor do produto..." Keyboard="Numeric" />
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -29,12 +38,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Text="Adicionar" VerticalOptions="End"
-                        HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
-                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
+                        TextColor="White" Grid.Row="0" Grid.Column="0"
                         Clicked="BtnAdicionar_clicked"/>
                 <Button Text="Cancelar" VerticalOptions="End"
-                        HorizontalOptions="FillAndExpand"  BackgroundColor="White" 
-                        TextColor="DarkOliveGreen" Grid.Row="0" Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
+                        TextColor="White" Grid.Row="0" Grid.Column="1"
                         Clicked="BtnVoltar_clicked"/>
             </Grid>
         </StackLayout>

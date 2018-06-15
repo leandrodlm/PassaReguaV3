@@ -8,6 +8,11 @@ namespace PassaRegua
     {
         public string nomePessoa { get; set; }
         public Double valorTotal { get; set; }
+
+        public void addValue(Double v)
+        {
+            valorTotal += v;
+        }
     }
         
 }

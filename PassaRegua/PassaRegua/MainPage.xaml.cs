@@ -10,15 +10,13 @@ namespace PassaRegua
 {
     public partial class MainPage : ContentPage
     {
-        //ListView PessoasView;
-        //List<String> pessoas;
-        //List<String> produtos;
-
+        
         public ObservableCollection<Pessoa> pessoas = new ObservableCollection<Pessoa>();
 
         public MainPage()
         {
             InitializeComponent();
+
             listaPessoas.ItemsSource = pessoas;
         }
 
@@ -27,14 +25,25 @@ namespace PassaRegua
             pessoas.Add(new Pessoa { nomePessoa = entradaNome, valorTotal = 0 });
         }
 
-        public void AddProduto(Pessoa p, double valor)
+        public void AddProduto(String nome, Double valor)
         {
+            ObservableCollection<Pessoa> newPessoas = new ObservableCollection<Pessoa>();
 
+            foreach (Pessoa p in pessoas)
+            {
+                if(p.nomePessoa.CompareTo(nome) == 0)
+                {
+                    p.addValue(valor);
+                }
+                newPessoas.Add(p);
+            }
+
+            listaPessoas.ItemsSource = newPessoas;
         }
 
         public void LimparMesa()
         {
-            pessoas.Clear();
+            listaPessoas.ItemsSource = new ObservableCollection<Pessoa>();
         }
 
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
@@ -62,15 +71,22 @@ namespace PassaRegua
                 foreach (Pessoa p in pessoas)
                 {
                     valorDaConta += p.valorTotal;
+                    pFinalizada.Add(p);
                 }
 
-                foreach (Pessoa p in pessoas)
+                if (answer) {
+                    pFinalizada = new List<Pessoa>();
+                    foreach (Pessoa p in pessoas)
+                    {
+                        pFinalizada.Add(new Pessoa { nomePessoa = p.nomePessoa, valorTotal = (p.valorTotal + ((valorDaConta * 0.1) / pessoas.Count)) });
+                    }
+
+                    await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, (valorDaConta + (valorDaConta * 0.1))));
+                }
+                else
                 {
-
-                    pFinalizada.Add(new Pessoa { nomePessoa = p.nomePessoa, valorTotal = (p.valorTotal + (valorDaConta * 0.1)) });
+                    await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta ));
                 }
-
-                await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta));
             }
             else
             {
