@@ -41,15 +41,16 @@
         </ListView>
 
         <Button Text="Adicionar pessoa" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand"  BackgroundColor="Teal" TextColor="White" 
+        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" TextColor="White" 
                 Clicked="BtnAdicionarPessoaPage_clicked" FontFamily="Roboto"/>
 
         <Button Text="Adicionar produto" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand" BackgroundColor="Teal" TextColor="White"
+        HorizontalOptions="FillAndExpand" BackgroundColor="#018786" TextColor="White"
                 Clicked="BtnAdicionarProdutoPage_clicked" FontFamily="Roboto"/>
 
         <Button Text="Fechar conta" VerticalOptions="End"
-        HorizontalOptions="FillAndExpand" BackgroundColor="Teal" TextColor="White" FontFamily="Roboto"/>
+        HorizontalOptions="FillAndExpand" BackgroundColor="#018786" TextColor="White" 
+                Clicked="BtnFecharConta_clicked" FontFamily="Roboto"/>
     </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassaRegua.ContaFinalizada">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listapessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" >
+
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+                        Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding nomePessoa}"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="Start"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large"
+                                FontFamily="Roboto"/>
+                                    <Label Text="{Binding valorTotal, StringFormat='R{0:C2}'}"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="End"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large" 
+                                FontFamily="Roboto"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout BackgroundColor="White"
+                        Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Valor total:"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="Start"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large"
+                                FontFamily="Roboto"/>
+                    <Label Text="{Binding Path.t, StringFormat='R{0:C2}'}"
+                                HorizontalOptions="FillAndExpand" 
+                                HorizontalTextAlignment="End"
+                                VerticalOptions="Center"
+                                TextColor="Black" 
+                                FontSize="Large" 
+                                FontFamily="Roboto"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Fechar Mesa" VerticalOptions="End"
+                HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" TextColor="White" 
+                Clicked="btnFecharMesa_Clicked" FontFamily="Roboto"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

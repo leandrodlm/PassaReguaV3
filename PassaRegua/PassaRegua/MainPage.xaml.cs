@@ -32,6 +32,11 @@ namespace PassaRegua
 
         }
 
+        public void LimparMesa()
+        {
+            pessoas.Clear();
+        }
+
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
         {
             //var addPage = new AddPage(this);
@@ -46,9 +51,31 @@ namespace PassaRegua
             await Navigation.PushModalAsync(new AddProduto(this));
         }
 
-        public void BtnFecharConta_clicked(object sender, EventArgs e)
+        async void BtnFecharConta_clicked(object sender, EventArgs e)
         {
+            if (pessoas.Count != 0)
+            {
+                Boolean answer = await DisplayAlert("Passar a régua", "Vocês gostariam de pagar os 10%?", "Yes", "No");
+                Double valorDaConta = 0;
+                List<Pessoa> pFinalizada = new List<Pessoa>();
 
+                foreach (Pessoa p in pessoas)
+                {
+                    valorDaConta += p.valorTotal;
+                }
+
+                foreach (Pessoa p in pessoas)
+                {
+
+                    pFinalizada.Add(new Pessoa { nomePessoa = p.nomePessoa, valorTotal = (p.valorTotal + (valorDaConta * 0.1)) });
+                }
+
+                await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta));
+            }
+            else
+            {
+                DisplayAlert("Alerta", "Não é possível fechar uma mesa vazia!", "OK");
+            }
         }
     }
 }
