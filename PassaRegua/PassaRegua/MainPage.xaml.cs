@@ -19,6 +19,7 @@ namespace PassaRegua
         public MainPage()
         {
             InitializeComponent();
+
             listapessoas.ItemsSource = pessoas;
             listapessoas.IsPullToRefreshEnabled = true;
         }

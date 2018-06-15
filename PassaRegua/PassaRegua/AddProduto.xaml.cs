@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,18 +19,26 @@ namespace PassaRegua
         {
             mp = m;
 
-            var listaDePessoas = mp.pessoas;
+            // List<Pessoa> list = new List<Pessoa>(mp.pessoas);
+
+            //listaPessoasPicker.ItemsSource = list;
+
+            // Picker pick = AddProduto.
+
+            // listaPessoasPicker.ItemsSource = new ObservableCollection<Pessoa>(list as List<Pessoa>);
+
+
+
+            listaPessoasPicker.ItemsSource = new List<Pessoa>(mp.pessoas);
 
             // var opcoesSelecaoPessoa = mp.pessoas;
-
             // listapessoass.ItemsSource = mp.pessoas;
-
             // ObservableCollection<Pessoa> novaLista = mp.pessoas;
-
             //listaPessoasPicker.Items.Add("Olá!");
 
             InitializeComponent();
         }
+
 
 
         async void BtnAdicionar_clicked(object sender, EventArgs e)

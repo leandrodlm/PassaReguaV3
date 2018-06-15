@@ -9,14 +9,8 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-
-        <Label Text="Mesa" 
-           HorizontalOptions="FillAndExpand"
-           HorizontalTextAlignment="Center"
-           VerticalOptions="FillAndExpand" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
-               FontFamily="Roboto"/>
-
-        <ListView x:Name="listapessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
+        
+        <ListView x:Name="listaPessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand" >
 
             <ListView.ItemTemplate >
