@@ -20,6 +20,7 @@ namespace PassaRegua
         {
             InitializeComponent();
             listapessoas.ItemsSource = pessoas;
+            listapessoas.IsPullToRefreshEnabled = true;
         }
 
         public void AddNovaPessoa(string entradaNome)
@@ -67,10 +68,10 @@ namespace PassaRegua
                 foreach (Pessoa p in pessoas)
                 {
 
-                    pFinalizada.Add(new Pessoa { nomePessoa = p.nomePessoa, valorTotal = (p.valorTotal + (valorDaConta * 0.1)) });
+                    pFinalizada.Add(new Pessoa { nomePessoa = p.nomePessoa, valorTotal = (p.valorTotal + ((valorDaConta * 0.1)/pessoas.Count)) });
                 }
 
-                await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta));
+                await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, (valorDaConta+(valorDaConta*0.1))));
             }
             else
             {

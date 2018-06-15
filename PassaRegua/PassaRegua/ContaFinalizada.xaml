@@ -44,7 +44,7 @@
                                 TextColor="Black" 
                                 FontSize="Large"
                                 FontFamily="Roboto"/>
-                    <Label Text="{Binding Path.t, StringFormat='R{0:C2}'}"
+                    <Label x:Name="vTotal" Text=""
                                 HorizontalOptions="FillAndExpand" 
                                 HorizontalTextAlignment="End"
                                 VerticalOptions="Center"

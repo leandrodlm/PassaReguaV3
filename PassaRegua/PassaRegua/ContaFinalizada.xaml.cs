@@ -26,6 +26,8 @@ namespace PassaRegua
             mp = m;
 
             listapessoas.ItemsSource = pessoas;
+            listapessoas.IsPullToRefreshEnabled = true;
+            vTotal.Text = "R$" + total.ToString("0.00");
         }
 
         async void btnFecharMesa_Clicked(object sender, EventArgs e)
