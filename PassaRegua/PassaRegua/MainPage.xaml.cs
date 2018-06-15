@@ -10,8 +10,11 @@ namespace PassaRegua
 {
     public partial class MainPage : ContentPage
     {
-        
+
         public ObservableCollection<Pessoa> pessoas = new ObservableCollection<Pessoa>();
+        public List<ProdutoConsumido> fatura = new List<ProdutoConsumido>();
+
+        private int idCount = 0;
 
         public MainPage()
         {
@@ -22,17 +25,19 @@ namespace PassaRegua
 
         public void AddNovaPessoa(string entradaNome)
         {
-            pessoas.Add(new Pessoa { nomePessoa = entradaNome, valorTotal = 0 });
+            pessoas.Add(new Pessoa { ID = idCount, nomePessoa = entradaNome, valorTotal = 0 });
+            idCount++;
         }
 
-        public void AddProduto(String nome, Double valor)
+        public void AddProduto(String nome, String nmProduto, Double valor)
         {
             ObservableCollection<Pessoa> newPessoas = new ObservableCollection<Pessoa>();
 
             foreach (Pessoa p in pessoas)
             {
-                if(p.nomePessoa.CompareTo(nome) == 0)
+                if (p.nomePessoa.CompareTo(nome) == 0)
                 {
+                    fatura.Add(new ProdutoConsumido { IDpessoa = p.ID, nomeProduto = nmProduto, valorProduto = valor });
                     p.addValue(valor);
                 }
                 newPessoas.Add(p);
@@ -74,7 +79,8 @@ namespace PassaRegua
                     pFinalizada.Add(p);
                 }
 
-                if (answer) {
+                if (answer)
+                {
                     pFinalizada = new List<Pessoa>();
                     foreach (Pessoa p in pessoas)
                     {
@@ -85,13 +91,19 @@ namespace PassaRegua
                 }
                 else
                 {
-                    await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta ));
+                    await Navigation.PushModalAsync(new ContaFinalizada(this, pFinalizada, valorDaConta));
                 }
             }
             else
             {
-                DisplayAlert("Alerta", "Não é possível fechar uma mesa vazia!", "OK");
+                await DisplayAlert("Alerta", "Não é possível fechar uma mesa vazia!", "OK");
             }
+        }
+
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem;
+            // Abrir Modal que descreve todos os produtos consumidos pela pessoa selecionada
         }
     }
 }

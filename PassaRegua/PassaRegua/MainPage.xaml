@@ -14,9 +14,9 @@
            HorizontalOptions="FillAndExpand"
            HorizontalTextAlignment="Center" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
                FontFamily="Roboto"/>
-        
+
         <ListView x:Name="listaPessoas" BackgroundColor="White" VerticalOptions="FillAndExpand"
-                            HorizontalOptions="FillAndExpand" >
+                            HorizontalOptions="FillAndExpand" ItemSelected="OnItemSelected">
 
             <ListView.ItemTemplate >
                 <DataTemplate>

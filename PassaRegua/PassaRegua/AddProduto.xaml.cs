@@ -38,12 +38,12 @@ namespace PassaRegua
             try
             {
                 Double v = Double.Parse(valor.Text);
-                mp.AddProduto(listaPessoasPicker.Items[listaPessoasPicker.SelectedIndex], v);
+                mp.AddProduto(listaPessoasPicker.Items[listaPessoasPicker.SelectedIndex], produto.Text, v);
                 await Navigation.PopModalAsync();
             }
             catch(Exception ex)
             {
-                DisplayAlert("Alerta", ex.Message, "OK");
+                await DisplayAlert("Alerta", ex.Message, "OK");
             }
         }
 
