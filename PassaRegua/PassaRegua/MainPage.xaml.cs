@@ -24,7 +24,7 @@ namespace PassaRegua
 
         public void AddNovaPessoa(string entradaNome)
         {
-            pessoas.Add(new Pessoa { nomePessoa = entradaNome, valorTotal = 10 });
+            pessoas.Add(new Pessoa { nomePessoa = entradaNome, valorTotal = 0 });
         }
 
         public void AddProduto(Pessoa p, double valor)
