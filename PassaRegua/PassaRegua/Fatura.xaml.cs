@@ -9,12 +9,20 @@ using Xamarin.Forms.Xaml;
 
 namespace PassaRegua
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Fatura : ContentView
-	{
-		public Fatura ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Fatura : ContentPage
+    {
+        public Fatura(String nome, List<ProdutoConsumido> fPessoa)
+        {
+            InitializeComponent();
+
+            nomePessoa.Text = nome;
+            fatura.ItemsSource = fPessoa;
+        }
+
+        async void BtnVoltar_clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+    }
 }

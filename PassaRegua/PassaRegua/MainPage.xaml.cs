@@ -27,6 +27,7 @@ namespace PassaRegua
         {
             pessoas.Add(new Pessoa { ID = idCount, nomePessoa = entradaNome, valorTotal = 0 });
             idCount++;
+            listaPessoas.ItemsSource = pessoas;
         }
 
         public void AddProduto(String nome, String nmProduto, Double valor)
@@ -48,7 +49,8 @@ namespace PassaRegua
 
         public void LimparMesa()
         {
-            listaPessoas.ItemsSource = new ObservableCollection<Pessoa>();
+            pessoas = new ObservableCollection<Pessoa>();
+            listaPessoas.ItemsSource = pessoas;
         }
 
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
@@ -100,10 +102,20 @@ namespace PassaRegua
             }
         }
 
-        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem;
-            // Abrir Modal que descreve todos os produtos consumidos pela pessoa selecionada
+            Pessoa pessoa = (Pessoa)e.SelectedItem;
+            List<ProdutoConsumido> pCons = new List<ProdutoConsumido>();
+
+            foreach (ProdutoConsumido pc in fatura)
+            {
+                if (pc.IDpessoa == pessoa.ID)
+                {
+                    pCons.Add(pc);
+                }
+            }
+
+            await Navigation.PushModalAsync(new Fatura(pessoa.nomePessoa, pCons));
         }
     }
 }

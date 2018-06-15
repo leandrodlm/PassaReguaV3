@@ -1,10 +1,48 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PassaRegua.Fatura">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="" x:Name="nomePessoa" 
+           HorizontalOptions="FillAndExpand"
+           HorizontalTextAlignment="Center" BackgroundColor="#C51162" TextColor="White" FontSize="25" 
+               FontFamily="Roboto"/>
+
+            <ListView x:Name="fatura" BackgroundColor="White" VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" >
+
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+                            Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding nomeProduto}"
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="Black" 
+                                    FontSize="Large"
+                                    FontFamily="Roboto"/>
+                                    <Label Text="{Binding valorProduto, StringFormat='R{0:C2}'}"
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="End"
+                                    VerticalOptions="Center"
+                                    TextColor="Black" 
+                                    FontSize="Large" 
+                                    FontFamily="Roboto"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Voltar" VerticalOptions="End"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
+                        TextColor="White"
+                        Clicked="BtnVoltar_clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
