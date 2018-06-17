@@ -39,6 +39,11 @@
                 </ListView.ItemTemplate>
             </ListView>
 
+            <Button Text="Remover pessoa" VerticalOptions="End"
+                        HorizontalOptions="FillAndExpand"  BackgroundColor="#E53935" 
+                        TextColor="White"
+                        Clicked="BtnExcluir_clicked"/>
+
             <Button Text="Voltar" VerticalOptions="End"
                         HorizontalOptions="FillAndExpand"  BackgroundColor="#018786" 
                         TextColor="White"

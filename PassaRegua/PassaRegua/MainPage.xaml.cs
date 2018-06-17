@@ -53,6 +53,12 @@ namespace PassaRegua
             listaPessoas.ItemsSource = pessoas;
         }
 
+        public void RemoverPessoa(int idPessoa)
+        {
+            pessoas.RemoveAt(idPessoa);
+            listaPessoas.ItemsSource = pessoas;
+        }
+
         async void BtnAdicionarPessoaPage_clicked(object sender, EventArgs e)
         {
             //var addPage = new AddPage(this);
@@ -115,7 +121,7 @@ namespace PassaRegua
                 }
             }
 
-            await Navigation.PushModalAsync(new Fatura(pessoa.nomePessoa, pCons));
+            await Navigation.PushModalAsync(new Fatura(pessoa, pCons, this));
         }
     }
 }
